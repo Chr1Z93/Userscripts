@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ArkhamDB Dark Mode Favicon
 // @namespace    http://tampermonkey.net/
-// @version      1.2
+// @version      1.3
 // @description  Replaces the favicon with a white version for clients with dark mode
 // @author       Chr1Z
 // @match        https://arkhamdb.com/*
@@ -13,12 +13,8 @@
   'use strict';
 
   function setDarkModeFavicon() {
-    const darkModeFavicon = 'https://i.imgur.com/T3vHgln.png';
-
     // Detect if the user is in dark mode
-    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (isDarkMode) {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       // Remove existing favicons
       let favicons = document.querySelectorAll('link[rel="icon"], link[rel="apple-touch-icon"]');
       favicons.forEach(favicon => favicon.remove());
@@ -27,10 +23,10 @@
       const favicon = document.createElement('link');
       favicon.rel = 'icon';
       favicon.sizes = '192x192';
-      favicon.href = darkModeFavicon;
+      favicon.href = 'https://i.imgur.com/T3vHgln.png';
       document.head.appendChild(favicon);
 
-      // Optionally add the apple-touch-icon as well
+      // Add the apple-touch-icon as well
       const appleTouchIcon = document.createElement('link');
       appleTouchIcon.rel = 'apple-touch-icon';
       appleTouchIcon.sizes = '120x120';
@@ -39,7 +35,6 @@
     }
   }
 
-  // Initial call to set dark mode favicon
   setDarkModeFavicon();
 
   // Listen for changes in color scheme
