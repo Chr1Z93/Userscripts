@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         ArkhamDB Dynamic Title
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  Update the title of ArkhamDB deck pages to include the first 30 characters of the deck name.
 // @author       Chr1Z
-// @match        https://arkhamdb.com/deck/*
+// @match        https://*.arkhamdb.com/deck/*
 // @icon         https://i.imgur.com/T3vHgln.png
 // @grant        none
 // ==/UserScript==

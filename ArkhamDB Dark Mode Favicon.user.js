@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         ArkhamDB Dark Mode Favicon
 // @namespace    http://tampermonkey.net/
-// @version      1.3
+// @version      1.4
 // @description  Replaces the favicon with a white version for clients with dark mode
 // @author       Chr1Z
-// @match        https://arkhamdb.com/*
+// @match        https://*.arkhamdb.com/*
 // @icon         https://i.imgur.com/T3vHgln.png
 // @grant        none
 // ==/UserScript==
